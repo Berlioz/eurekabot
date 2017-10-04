@@ -88,6 +88,15 @@ bot.command :xlogs do |event, *args|
 	respondLogs(event, [15, 17], $last_charname.split + [$last_server])
 end
 
+bot.command :math do |event, *args|
+	if Random.rand(2) == 0
+		event << "You suffer the effect of Low Arithmeticks."
+	else
+		event << "You suffer the effect of High Arithmeticks."
+	end
+	return nil
+end
+
 bot.command :help do |event, *args|
 	p event.server.id
 	event << "**!logs** *charactername* *server*: gets data for all current patch content."
