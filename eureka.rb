@@ -79,7 +79,7 @@ end
 bot.command :ls do |event, *args|
 	fname = args[0]
 	lname = args[1]
-	dc = args[2]
+	dc = args[2] || "Primal"
 	respondLodestone(event, fname + " " + lname, dc)
 end
 
@@ -105,12 +105,13 @@ bot.command :help do |event, *args|
 	event << "**!zsports** *charactername* *server*: gets data for selected encounters in previous expansions."
 	event << "**!ls** *charactername* *datacenter*: look up what server that 11 dps scholar in your PF could be from. case-sensitive. fuck sqex."
 	event << "**!xlogs**: shortcut to make a !logs request with the top result of the last !ls request"
+	event << "server can be omitted and will default to excal; datacenter can be omitted and will default to primal."
 end
 
 def respondLogs(event, zones, args)
 	fname = args[0]
 	lname = args[1]
-	server = args[2]
+	server = args[2] || 'Excalibur'
 	scrub = true
 	begin
 		raw = analyze(fname + " " + lname, zones, server)
