@@ -197,7 +197,7 @@ def analyze(name, query_zones, server)
 		next unless query_zones.include?(zone)
 		encounters.each do |eid|
 			response = fflogs_fight(name, server, zone, eid)
-			return response if response["hidden"]
+			return response if response.first == ["hidden", true]
 			next if response.count == 0
 			specs = response.first["specs"]
 			specs.each do |spec|
