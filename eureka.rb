@@ -61,7 +61,7 @@ EMOJI = {
 	"Samurai" => "<:sambot:362031567993831424>"
 }
 
-bot = Discordrb::Commands::CommandBot.new token: File.read('token'), client_id: File.read('client'), prefix: '!'
+bot = Discordrb::Commands::CommandBot.new token: File.read('token').strip, client_id: File.read('client').strip, prefix: '!'
 
 bot.command :logs do |event, *args|
 	respondLogs(event, [15, 17], args)
