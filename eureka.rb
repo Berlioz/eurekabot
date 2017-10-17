@@ -110,6 +110,7 @@ bot.command :help do |event, *args|
 	event << "**!esports** *name* *server*: gets data for all current raid content."
 	event << "**!bsports** *name* *server*: gets data for previous patch raid content."
 	event << "**!zsports** *name* *server*: gets data for selected encounters in previous expansions."
+	event << "**!anaise** *name* *server*: the true metric of player skill"
 	event << "**!ls** *name* *dc*: find charcters in a datacenter with a name, and their 70 classes."
 	event << "**!xlogs**: shortcut to make a !logs request with the top result of the last !ls request"
 	event << "**!xlogs** *n*: shortcut to make a !logs request with the Nth result of the last !ls request, counting from 1."
