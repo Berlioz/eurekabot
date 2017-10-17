@@ -15,12 +15,14 @@ ZONES = {
 	9 => [25],							# A8S
 	13 => [34, 35, 36, 37],				# A9-A12S
 	15 => [1036, 1037],					# Susano and Lakshmi
-	17 => [42, 43, 44, 45, 46]			# O1S-O4S
+	17 => [42, 43, 44, 45, 46],			# O1S-O4S
+	18 => [2008, 2009, 2010, 2011]
 }
 
 ENCOUNTERS = {
 	42 => "O1S", 43 => "O2S", 44 => "O3S", 45 => "Exfaust", 46 => "O4S", 1036 => "Partydad", 1037 => "Snakemom", 1038 => "Dragondad",
-	34 => "A9S", 35 => "A10S", 36 => "A11S", 37 => "A12S", 25 => "A8S", 17 => "A4S", 1034 => "Sophia", 1035 => "Zurvan"
+	34 => "A9S", 35 => "A10S", 36 => "A11S", 37 => "A12S", 25 => "A8S", 17 => "A4S", 1034 => "Sophia", 1035 => "Zurvan",
+	2008 => "Mateus", 2009 => "Hashmal", 2010 => "Rofocale" , 2011 => "Argath" 
 }
 
 CLASSES = {
@@ -77,6 +79,10 @@ bot.command :bsports do |event, *args|
 	respondLogs(event, [], args)
 end
 
+bot.command :anaise do |event, *args|
+	respondLogs(event, [18], args)
+end
+
 bot.command :ls do |event, *args|
 	fname = args[0]
 	lname = args[1]
@@ -100,7 +106,6 @@ bot.command :math do |event, *args|
 end
 
 bot.command :help do |event, *args|
-	p event.server.id
 	event << "**!logs** *name* *server*: gets data for all current patch content."
 	event << "**!esports** *name* *server*: gets data for all current raid content."
 	event << "**!bsports** *name* *server*: gets data for previous patch raid content."
